@@ -1,4 +1,4 @@
-const makeDOMWithProperties = (domType, propertyMap) => {
+export const makeDOMWithProperties = (domType, propertyMap) => {
   const dom = document.createElement(domType);
 
   Object.keys(propertyMap).forEach((key) => {
@@ -6,4 +6,11 @@ const makeDOMWithProperties = (domType, propertyMap) => {
   });
 
   return dom;
+};
+
+export const appendChildrenList = (target, childrenList) => {
+  if (!Array.isArray(childrenList)) return;
+  childrenList.forEach((children) => {
+    target.appendChild(children);
+  });
 };
